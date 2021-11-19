@@ -1,11 +1,11 @@
 Package.describe({
   name: 'iron:controller',
   summary: 'Controller class for dynamic layouts.',
-  version: '1.0.12',
-  git: 'https://github.com/iron-meteor/iron-controller'
+  version: '1.1.0',
+  git: 'https://github.com/meteor-compat/iron-controller'
 });
 
-Package.on_use(function (api) {
+Package.onUse(function (api) {
   api.versionsFrom('METEOR@0.9.2');
 
   api.use('underscore');
@@ -17,15 +17,15 @@ Package.on_use(function (api) {
   api.imply('iron:core');
 
   api.use('iron:layout@1.0.12');
-  api.use('iron:dynamic-template@1.0.12');
+  api.use('iron:dynamic-template@1.1.0');
 
-  api.add_files('lib/wait_list.js', 'client');
-  api.add_files('lib/controller.js');
-  api.add_files('lib/controller_server.js', 'server');
-  api.add_files('lib/controller_client.js', 'client');
+  api.addFiles('lib/wait_list.js', 'client');
+  api.addFiles('lib/controller.js');
+  api.addFiles('lib/controller_server.js', 'server');
+  api.addFiles('lib/controller_client.js', 'client');
 });
 
-Package.on_test(function (api) {
+Package.onTest(function (api) {
   api.use('iron:controller');
   api.use('iron:layout');
   api.use('tinytest');
@@ -33,7 +33,7 @@ Package.on_test(function (api) {
   api.use('tracker');
   api.use('templating');
 
-  api.add_files('test/controller_test.html', 'client');
-  api.add_files('test/wait_list_test.js', 'client');
-  api.add_files('test/controller_test.js', 'client');
+  api.addFiles('test/controller_test.html', 'client');
+  api.addFiles('test/wait_list_test.js', 'client');
+  api.addFiles('test/controller_test.js', 'client');
 });
